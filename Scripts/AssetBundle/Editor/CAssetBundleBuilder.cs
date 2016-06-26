@@ -12,9 +12,9 @@ namespace tora.assetbundle {
 
 
 		[MenuItem("Tora/Asset Bundles/Build Asset Bundles")]
-		public static void BuildAssetBundles() {
+		public static void BuildAllAssetBundles() {
 
-			string dir = Directory.GetCurrentDirectory() + CAssetBundleConfigs.ASSET_BUNDLE_LOCAL_PATH ;
+			string dir = Directory.GetCurrentDirectory() + CAssetBundleConfigs.ASSET_BUNDLE_EXPORT_PATH ;
 
 			if(!Directory.Exists(dir)) {
 				Directory.CreateDirectory(dir);
@@ -26,7 +26,7 @@ namespace tora.assetbundle {
 		[MenuItem("Tora/Asset Bundles/Build Asset Bundles - Variants")]
 		public static void BuildAssetBundlesVariants() {
 
-			string dir = Directory.GetCurrentDirectory() + CAssetBundleConfigs.ASSET_BUNDLE_LOCAL_PATH ;
+			string dir = Directory.GetCurrentDirectory() + CAssetBundleConfigs.ASSET_BUNDLE_EXPORT_PATH ;
 
 			if(!Directory.Exists(dir)) {
 				Directory.CreateDirectory(dir);
