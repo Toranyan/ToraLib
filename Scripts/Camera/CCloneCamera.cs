@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
 namespace tora.camera {
 
 	/// <summary>

@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-namespace mt.camera {
+namespace tora.camera {
 
 	[ExecuteInEditMode]
 	public class CFollowCamera : MonoBehaviour {
