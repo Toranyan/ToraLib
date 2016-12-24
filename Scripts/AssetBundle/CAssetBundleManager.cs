@@ -51,7 +51,7 @@ namespace tora.assetbundle {
 			//add to list
 			if(www.error == null) {
 				assetBundle = www.assetBundle;
-				UnityEngine.Object[] objects = assetBundle.LoadAllAssets();
+				//UnityEngine.Object[] objects = assetBundle.LoadAllAssets();
 
 				if(assetBundle != null) {
 					m_dictAssetBundle.Add(assetBundle.name, assetBundle);
