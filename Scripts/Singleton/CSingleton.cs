@@ -3,6 +3,10 @@ using System.Collections;
 
 namespace tora.singleton {
 
+	/// <summary>
+	/// Standard Monobehaviour singleton
+	/// extend monobehaviours that use the singleton pattern with this class
+	/// </summary>
 	public class CSingleton<T> : MonoBehaviour where T : Component {
 
 		protected static T m_instance;
