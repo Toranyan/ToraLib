@@ -7,6 +7,9 @@ namespace tora.ui {
 
     public class UIAnimatedView : UIViewBase {
 
+        [SerializeField]
+        protected AnimationGroup m_openAnimationGroup;
+
         protected Action m_openCallback;
         protected Action m_closeCallback;
 
