@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace tora.fsm {
 
-	public class State : IState {
+	public abstract class State : IState {
 
 		public virtual void OnEnter(IState prevState) {
 

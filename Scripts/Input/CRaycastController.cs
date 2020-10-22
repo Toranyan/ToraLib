@@ -6,6 +6,9 @@ using System.Collections.Generic;
 
 namespace tora.input {
 
+	/// <summary>
+	/// Transforms clicks to raycasts
+	/// </summary>
 	public class CRaycastController : MonoBehaviour {
 
 
