@@ -11,6 +11,9 @@ namespace tora.ui {
         [SerializeField]
         protected Button m_buttonOK;
 
+        [SerializeField]
+        protected Button m_buttonClose;
+
         protected DialogCallback m_callback;
         protected int m_response;
 
