@@ -13,6 +13,12 @@ namespace tora.camera {
 		protected bool m_enabled = true;
 
 		[SerializeField]
+		protected bool m_enableFollow = true;
+
+		[SerializeField]
+		protected bool m_enableLook = true;
+
+		[SerializeField]
 		protected eRunMode m_runMode = eRunMode.LateUpdate;
 		
 		[SerializeField]
@@ -160,21 +166,20 @@ namespace tora.camera {
 			//m_vecDampLook = 
 
 		}
-		/*
-		// Update is called once per frame
+		
 		[ExecuteInEditMode]
 		public void Update() {
 			if(m_runMode == eRunMode.Update) {
 				Run ();
 			}
-
 		}
+
 		[ExecuteInEditMode]
 		public void FixedUpdate() {
 			if(m_runMode == eRunMode.FixedUpdate) {
 				Run ();
 			}
-		}*/
+		}
 
 		[ExecuteInEditMode]
 		public void LateUpdate() {
@@ -182,7 +187,6 @@ namespace tora.camera {
 				Run ();
 			}
 		}
-
 
 		public void OnDrawGizmos() {
 
@@ -242,30 +246,33 @@ namespace tora.camera {
 
 				
 			//Follow Target
-			if(m_followTarget != null) {
-				m_vecFollowTarget = m_followTarget.transform.position + m_vecFollowOffset;
-			} else {
-				m_vecFollowTarget = Vector3.zero + m_vecFollowOffset;
-			}
-			//damping
-			if(m_bDampFollow ) { //&& Application.platform != RuntimePlatform.WindowsEditor) {
-				m_vecDampTarget = Vector3.SmoothDamp(m_vecDampTarget, m_vecFollowTarget, ref m_vecDampVelo, m_dampFollow, m_maxVelo, deltaTime);
-				
-				//change follow vector
-				m_vecFollowTarget = m_vecDampTarget;
-			} else {
-				//update the damp target in case 
-				m_vecDampTarget = m_vecFollowTarget;
+			if (m_enableFollow) {
+				if (m_followTarget != null) {
+					m_vecFollowTarget = m_followTarget.transform.position + m_vecFollowOffset;
+				} else {
+					m_vecFollowTarget = Vector3.zero + m_vecFollowOffset;
+				}
+				//damping
+				if (m_bDampFollow) { //&& Application.platform != RuntimePlatform.WindowsEditor) {
+					m_vecDampTarget = Vector3.SmoothDamp(m_vecDampTarget, m_vecFollowTarget, ref m_vecDampVelo, m_dampFollow, m_maxVelo, deltaTime);
+
+					//change follow vector
+					m_vecFollowTarget = m_vecDampTarget;
+				} else {
+					//update the damp target in case 
+					m_vecDampTarget = m_vecFollowTarget;
+				}
 			}
 			
-			//Look Target
-			if(lookTarget != null) {
-				m_vecLookTarget = lookTarget.transform.position;
-			} else { // use same as follow target
-
-				m_vecLookTarget = Vector3.zero;
-
+			if (m_enableLook) {
+				//Look Target
+				if (lookTarget != null) {
+					m_vecLookTarget = lookTarget.transform.position;
+				} else { // use same as follow target
+					m_vecLookTarget = Vector3.zero;
+				}
 			}
+			
 				
 			//damping
 			if(m_bDampLook) {
@@ -392,10 +399,12 @@ namespace tora.camera {
 					//transform.position = vecFinalPos;
 				}
 			}
-			
-			
+
+
 			//position
-			transform.position = vecFinalPos;
+			if (m_enableFollow) {
+				transform.position = vecFinalPos;
+			}
 			
 			//look at
 			Vector3 vecUp = Vector3.up;
