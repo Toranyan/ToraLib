@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IDesctructible
+public interface IDestructible
 {
 
     void TakeDamage(DamageInstance damage);

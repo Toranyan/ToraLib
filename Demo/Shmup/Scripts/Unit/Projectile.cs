@@ -19,7 +19,7 @@ public class Projectile : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider collider) {
-        var dest = collider.GetComponent<IDesctructible>();
+        var dest = collider.GetComponent<IDestructible>();
         if (dest != null) 
         {
             //
