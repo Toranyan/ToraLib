@@ -19,9 +19,9 @@ namespace tora.fsm {
 		protected IState m_currentState;
 		protected IState m_prevState;
 
-		public void Run() {
+		public void Update() {
 			if (CurrentState != null) {
-				CurrentState.Run();
+				CurrentState.Update();
 			}
 		}
 

@@ -5,6 +5,12 @@ namespace tora.fsm {
 
 	public abstract class State : IState {
 
+		protected StateMachine _fsm;
+
+		public virtual void Init(StateMachine fsm) {
+
+		}
+
 		public virtual void OnEnter(IState prevState) {
 
 		}
@@ -13,7 +19,7 @@ namespace tora.fsm {
 
 		}
 
-		public virtual void Run() {
+		public virtual void Update() {
 
 		}
 
