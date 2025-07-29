@@ -19,7 +19,7 @@ namespace tora.fsm {
 
 		}
 
-		public virtual void Update() {
+		public virtual void OnUpdate() {
 
 		}
 

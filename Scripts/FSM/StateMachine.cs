@@ -21,7 +21,7 @@ namespace tora.fsm {
 
 		public void Update() {
 			if (CurrentState != null) {
-				CurrentState.Update();
+				CurrentState.OnUpdate();
 			}
 		}
 

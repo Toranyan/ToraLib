@@ -8,7 +8,7 @@ namespace tora.fsm {
 		void Init(StateMachine fsm);
 		void OnEnter(IState prevState);
 		void OnExit(IState nextState);
-		void Update();
+		void OnUpdate();
 	}
 
 }

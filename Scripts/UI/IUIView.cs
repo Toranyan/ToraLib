@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Cysharp.Threading.Tasks;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,8 +10,15 @@ namespace tora.ui {
         bool IsOpen {
             get;
         }
-        void Open();
-        void Close();
+
+        bool IsShown {
+            get;
+		}
+        UniTask Open();
+        UniTask Close();
+
+        void Show();
+        void Hide();
     }
 
 }

@@ -87,7 +87,7 @@ namespace tora.unit {
 		protected void FixedUpdate() {
 			//calc final velocity
 			Vector3 vecFinal = m_vecMove * m_speed;
-			this.Rigidbody.velocity = vecFinal;
+			this.Rigidbody.linearVelocity = vecFinal;
 		}
 
 	}
