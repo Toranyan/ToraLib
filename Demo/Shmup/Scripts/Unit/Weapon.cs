@@ -7,14 +7,16 @@ public class Weapon : MonoBehaviour
     [SerializeField]
     private Projectile projectilePrefab;
 
+    
+
 
     public void Fire() {
 
     }
 
 
-    private void SpawnProjectile() {
-        var proj = GameObject.Instantiate<Projectile>(projectilePrefab);
+    protected Projectile SpawnProjectile() {
+        return GameObject.Instantiate<Projectile>(projectilePrefab);
     }
 
 }

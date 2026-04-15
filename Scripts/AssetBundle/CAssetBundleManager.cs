@@ -9,11 +9,9 @@ using tora.singleton;
 
 namespace tora.assetbundle {
 
-	public class CAssetBundleManager : CSingleton<CAssetBundleManager> {
+	public class CAssetBundleManager : SingletonComponent<CAssetBundleManager> {
 
 		protected Dictionary<string, AssetBundle> m_dictAssetBundle = new Dictionary<string, AssetBundle>();
-
-
 
 		public static int Version {
 			get {
