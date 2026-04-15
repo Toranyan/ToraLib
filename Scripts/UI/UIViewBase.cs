@@ -29,18 +29,16 @@ namespace tora.ui {
             IsShown = false;
         }
 
-		public UniTask Open()
+		public void Open()
 		{
             Show();
             IsOpen = true;
-            return UniTask.CompletedTask;
         }
 
-		public UniTask Close()
+		public void Close()
 		{
             Hide();
             IsOpen = false;
-            return UniTask.CompletedTask;
         }
 	}
 

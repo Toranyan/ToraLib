@@ -17,9 +17,6 @@ namespace tora.ui {
         [SerializeField]
         protected string _closeStateName = "Close";
 
-        protected Action m_openCallback;
-        protected Action m_closeCallback;
-
         private int _openHash;
         private int _closeHash;
 
@@ -52,16 +49,22 @@ namespace tora.ui {
                 await Task.Yield();
 			}
 
-            m_openCallback = openFinishCallback;
+            openFinishCallback?.Invoke();
         }
 
         public async virtual void Close(Action closeCallback) {
-            m_closeCallback = closeCallback;
-
-
+            Init();
 
             Close();
-		}
+
+            _animator.Play(_closeHash);
+            while (_animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
+            {
+                await Task.Yield();
+            }
+
+            closeCallback?.Invoke();
+        }
  
     }
 

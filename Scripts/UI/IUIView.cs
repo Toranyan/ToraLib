@@ -14,8 +14,8 @@ namespace tora.ui {
         bool IsShown {
             get;
 		}
-        UniTask Open();
-        UniTask Close();
+        void Open();
+        void Close();
 
         void Show();
         void Hide();
