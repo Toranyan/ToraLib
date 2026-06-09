@@ -4,7 +4,7 @@ using System.Collections;
 namespace tora.camera {
 
 	[ExecuteInEditMode]
-	public class CFollowCamera : MonoBehaviour {
+	public class FollowCamera : MonoBehaviour {
 		
 		/****************************************
 		 * Inspector Fields

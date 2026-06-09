@@ -6,17 +6,17 @@ using UnityEditor;
 
 namespace tora.assetbundle {
 
-	public class CAssetBundleGUI : EditorWindow {
+	public class AssetBundleGUI : EditorWindow {
 
 		[MenuItem("Tora/Asset Bundles/Asset Bundle Build GUI")]
 		public static void Init() {
-			CAssetBundleGUI window = (CAssetBundleGUI)EditorWindow.GetWindow (typeof (CAssetBundleGUI));
+			AssetBundleGUI window = (AssetBundleGUI)EditorWindow.GetWindow (typeof (AssetBundleGUI));
 			window.Show();
 		}
 
 		public void OnGUI() {
 			if(GUILayout.Button("Build Asset Bundles")) {
-				CAssetBundleBuilder.BuildAllAssetBundles();
+				AssetBundleBuilder.BuildAllAssetBundles();
 			}
 		}
 

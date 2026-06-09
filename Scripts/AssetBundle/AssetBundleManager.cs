@@ -9,7 +9,7 @@ using tora.singleton;
 
 namespace tora.assetbundle {
 
-	public class CAssetBundleManager : SingletonComponent<CAssetBundleManager> {
+	public class AssetBundleManager : SingletonComponent<AssetBundleManager> {
 
 		protected Dictionary<string, AssetBundle> m_dictAssetBundle = new Dictionary<string, AssetBundle>();
 
@@ -20,12 +20,12 @@ namespace tora.assetbundle {
 		}
 
 		public void LoadAssetBundleName(string name, Action<AssetBundle> callback) {
-			string url = CAssetBundleConfigs.GetAssetBundleBaseURL() + name;
+			string url = AssetBundleConfigs.GetAssetBundleBaseURL() + name;
 			StartCoroutine(LoadAssetBundleURLInternal(url, callback));
 		}
 
 		public IEnumerator LoadAssetBundleNameAsync(string name, Action<AssetBundle> callback) {
-			string url = CAssetBundleConfigs.GetAssetBundleBaseURL() + name;
+			string url = AssetBundleConfigs.GetAssetBundleBaseURL() + name;
 			yield return LoadAssetBundleURLInternal(url, callback);
 		}
 

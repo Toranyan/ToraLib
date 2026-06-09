@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace tora.unit {
 
-	public class CUnit {
+	public class Unit {
 
 		public enum eState {
 			NONE,

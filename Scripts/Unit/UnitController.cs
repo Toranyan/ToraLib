@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace tora.unit {
 
 	[RequireComponent(typeof(Rigidbody))]
-	public class CUnitController : MonoBehaviour {
+	public class UnitController : MonoBehaviour {
 
 		//Serialized Fields
 

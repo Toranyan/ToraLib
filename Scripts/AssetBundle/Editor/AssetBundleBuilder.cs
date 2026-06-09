@@ -8,13 +8,13 @@ using System.Collections.Generic;
 
 namespace tora.assetbundle {
 
-	public class CAssetBundleBuilder {
+	public class AssetBundleBuilder {
 
 
 		[MenuItem("Tora/Asset Bundles/Build Asset Bundles")]
 		public static void BuildAllAssetBundles() {
 
-			string dir = Directory.GetCurrentDirectory() + CAssetBundleConfigs.ASSET_BUNDLE_EXPORT_PATH ;
+			string dir = Directory.GetCurrentDirectory() + AssetBundleConfigs.ASSET_BUNDLE_EXPORT_PATH ;
 
 			if(!Directory.Exists(dir)) {
 				Directory.CreateDirectory(dir);
@@ -26,7 +26,7 @@ namespace tora.assetbundle {
 		[MenuItem("Tora/Asset Bundles/Build Asset Bundles - Variants")]
 		public static void BuildAssetBundlesVariants() {
 
-			string dir = Directory.GetCurrentDirectory() + CAssetBundleConfigs.ASSET_BUNDLE_EXPORT_PATH ;
+			string dir = Directory.GetCurrentDirectory() + AssetBundleConfigs.ASSET_BUNDLE_EXPORT_PATH ;
 
 			if(!Directory.Exists(dir)) {
 				Directory.CreateDirectory(dir);

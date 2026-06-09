@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace tora.assetbundle {
 
-	public class CAssetBundleConfigs {
+	public class AssetBundleConfigs {
 
 		public const string ASSET_BUNDLE_EXPORT_PATH = "/AssetBundles/"; //from datapath
 
