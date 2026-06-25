@@ -9,7 +9,7 @@ namespace tora.input {
 	/// <summary>
 	/// Transforms clicks to raycasts
 	/// </summary>
-	public class CRaycastController : MonoBehaviour {
+	public class RaycastController : MonoBehaviour {
 
 
 		[SerializeField]

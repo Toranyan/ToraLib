@@ -4,10 +4,10 @@ using System.Collections;
 namespace tora.camera {
 
 	/// <summary>
-	/// C clone camera.
+	/// Clone camera.
 	/// Copies another camera
 	/// </summary>
-	public class CCloneCamera : MonoBehaviour {
+	public class CloneCamera : MonoBehaviour {
 
 		public Camera targetCamera;
 

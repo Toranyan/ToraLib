@@ -3,7 +3,7 @@ using System.Collections;
 
 using tora.assetbundle;
 
-public class CAssetLoadTest : MonoBehaviour {
+public class AssetLoadTest : MonoBehaviour {
 
 	[SerializeField]
 	protected string m_assetBundleToLoad;
@@ -21,7 +21,7 @@ public class CAssetLoadTest : MonoBehaviour {
 
 	public IEnumerator AsyncInit() {
 
-		CAssetBundleManager abm = CAssetBundleManager.Instance;
+		AssetBundleManager abm = AssetBundleManager.Instance;
 
 		bool loadDone = false;
 		AssetBundle assetBundle = null;

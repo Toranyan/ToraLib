@@ -3,14 +3,14 @@ using System.Collections;
 
 namespace tora.camera {
 
-	public class CFollowCamController : MonoBehaviour {
+	public class FollowCamController : MonoBehaviour {
 
 		/****************************************
 		 * Inspector Fields
 		 * **************************************/
 
 		[SerializeField]
-		protected CFollowCamera m_camera;
+		protected FollowCamera m_camera;
 		[SerializeField]
 		protected Vector3 m_rotateRate;
 		[SerializeField]
@@ -51,11 +51,11 @@ namespace tora.camera {
 
 			//self?
 			if(m_camera == null) {
-				m_camera = GetComponent<CFollowCamera>();
+				m_camera = GetComponent<FollowCamera>();
 			}
 
 			if(m_camera == null) {
-				m_camera = Camera.main.GetComponent<CFollowCamera>();
+				m_camera = Camera.main.GetComponent<FollowCamera>();
 			}
 			if(m_camera == null) {
 				Debug.LogWarning("Camera not found");
