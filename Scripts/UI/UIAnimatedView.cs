@@ -1,7 +1,6 @@
-﻿using System;
+﻿using Cysharp.Threading.Tasks;
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace tora.ui {
@@ -38,34 +37,39 @@ namespace tora.ui {
             _initialized = true;
 		}
 
-        public async virtual void Open(Action openFinishCallback) {
+        public override async void Open() {
             Init();
 
-            Open();
+            OnPreOpen();
+            Show();
+            IsOpen = true;
 
             _animator.Play(_openHash);
-
-            while(_animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1) {
-                await Task.Yield();
+            while (_animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1) {
+                await UniTask.Yield();
 			}
 
-            openFinishCallback?.Invoke();
+            OnPostOpen();
+            RaiseOpened();
         }
 
-        public async virtual void Close(Action closeCallback) {
+        public override async void Close() {
             Init();
 
-            Close();
+            OnPreClose();
 
             _animator.Play(_closeHash);
             while (_animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
             {
-                await Task.Yield();
+                await UniTask.Yield();
             }
 
-            closeCallback?.Invoke();
+            Hide();
+            IsOpen = false;
+            OnPostClose();
+            RaiseClosed();
         }
- 
+
     }
 
 }

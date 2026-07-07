@@ -28,6 +28,13 @@ namespace tora.ui {
 			{
                 m_buttonResponse[i].onClick.AddListener(() => OnClick(i));
 			}
+
+            // m_buttonOK and m_buttonClose are optional per-dialog — not every dialog has both.
+            if (m_buttonOK != null)
+                m_buttonOK.onClick.AddListener(() => OnClick(0));
+
+            if (m_buttonClose != null)
+                m_buttonClose.onClick.AddListener(Close);
 		}
 
 		public virtual void Init(string title, string message, string[] buttonLabel, DialogCallback callback) {
